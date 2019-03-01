@@ -6,3 +6,6 @@ SRC=main.c game.c
 
 pong.89z: $(HEADERS) $(SRC)
 	$(CC) $(CFGLAGS) -o $(EXENAME) $(SRC)
+
+clean:
+	rm -rf *.89z
