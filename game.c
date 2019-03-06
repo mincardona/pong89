@@ -117,6 +117,8 @@ void* render_init() {
     if (gbuf != NULL) {
         // redirect all graphics routines to the buffer
         PortSet(gbuf, GBUF_WIDTH - 1, GBUF_HEIGHT - 1);
+        // set the clipping area to the whole screen
+        SetCurClip(ScrRect);
     }
     return gbuf;
 }
@@ -131,7 +133,8 @@ void render(void* gbuf, struct pong_game_state* state) {
     // note that we are drawing on a buffer by this point
     ClearScr();
 
-
+    //state.pong_ball.pos;
+    //FillLines2()
 
     // blit the stuff to the screen
     LCD_restore(gbuf);
